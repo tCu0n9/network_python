@@ -2,8 +2,8 @@ import socket
 
 client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-host = "google.com"
-port = 80 
+host = "127.0.0.1"
+port = 444
 # client kết nối tới server với host và port
 client.connect((host,port))
 
