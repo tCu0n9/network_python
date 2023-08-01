@@ -3,7 +3,7 @@ import socket
 client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 host = "127.0.0.1"
-port = 444
+port = 80
 # client kết nối tới server với host và port
 client.connect((host,port))
 

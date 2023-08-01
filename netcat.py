@@ -30,7 +30,7 @@ def usage():
     sys.exit(0)
 
 def run_command(command):
-    command = command.rstrip()
+    command = command.strip()
     try: 
         output = subprocess.check_output(command, stderr=subprocess.STDOUT, shell=True)
     except:
@@ -98,6 +98,9 @@ def client_handle(client_socket):
         
     if command:
         while True:
+            if client_socket.fileno() == -1:
+                break
+            
             client_socket.send(b"<BHP:#> ")
             cmd_buffer = b""
             while b"\n" not in cmd_buffer:
