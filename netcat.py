@@ -91,7 +91,7 @@ class NetCat:
                     cmd_buffer = b''
                 except Exception as e:
                     print(f'server killed {e}')
-                    self.socket.close()
+                    client_socket.close()
                     sys.exit()
 
 if __name__ == '__main__':
